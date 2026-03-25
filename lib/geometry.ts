@@ -11,9 +11,10 @@ export function worldToCanvas(pos: Vector3, roomWidth: number, canvasWidth: numb
 // Convert 2D canvas coordinates to 3D world position
 export function canvasToWorld(canvasX: number, canvasY: number, roomWidth: number, canvasWidth: number, canvasHeight: number, padding: number = 20): Vector3 {
   const scale = (canvasWidth - padding * 2) / roomWidth
+  const roomDepth = (canvasHeight - padding * 2) / scale
   const x = (canvasX - padding) / scale
   const y = (canvasY - padding) / scale
-  return { x: Math.max(0, Math.min(x, roomWidth)), y: Math.max(0, Math.min(y, 0)), z: 0 }
+  return { x: Math.max(0, Math.min(x, roomWidth)), y: Math.max(0, Math.min(y, roomDepth)), z: 0 }
 }
 
 // Calculate distance between two points

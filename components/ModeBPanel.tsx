@@ -38,14 +38,17 @@ export function ModeBPanel({
     let goalType = ''
 
     if (selectedGoalId === 'goal-b1') {
-      // Bed to bathroom
-      fromPos = furniture.find((f) => f.id === 'bed-b')?.position || { x: 3.8, y: 0.5, z: 0 }
+      // Bed to bathroom - find bed furniture
+      const bedFurn = furniture.find((f) => f.type === 'bed')
+      fromPos = bedFurn?.position || { x: 3.8, y: 0.5, z: 0 }
       toPos = { x: room.width - 0.8, y: 0.8, z: 0 }
       goalType = 'bed-to-bath'
     } else {
-      // Desk to shelf
-      fromPos = furniture.find((f) => f.id === 'desk-b')?.position || { x: 3.5, y: 3.5, z: 0 }
-      toPos = furniture.find((f) => f.id === 'shelf-b')?.position || { x: 0.5, y: 5.5, z: 0 }
+      // Desk to shelf - find desk and shelf
+      const deskFurn = furniture.find((f) => f.type === 'desk')
+      const shelfFurn = furniture.find((f) => f.type === 'shelf')
+      fromPos = deskFurn?.position || { x: 3.5, y: 3.5, z: 0 }
+      toPos = shelfFurn?.position || { x: 0.5, y: 5.5, z: 0 }
       goalType = 'desk-to-shelf'
     }
 

@@ -176,7 +176,7 @@ export default function Home() {
           ) : (
             <POVView
               furniture={furniture}
-              room={room}
+              room={{ width: room.width, depth: room.depth, height: room.height }}
               currentPosition={povPosition}
               angle={0}
               isPOVWalking={isPOVWalking}
