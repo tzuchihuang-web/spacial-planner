@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Inter', sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 10;
+}
+
+.headerLeft {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.backButton {
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.backButton:hover {
+  background: #e0e0e0;
+  border-color: #c0c0c0;
+}
+
+.modeBadge {
+  font-size: 13px;
+  font-weight: 700;
+  background: #1a1a1a;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.headerRight {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.viewToggle {
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid #1a1a1a;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+}
+
+.viewToggle:hover {
+  background: #1a1a1a;
+  color: white;
+}
+
+.walkingIndicator {
+  padding: 6px 12px;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.canvasContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.canvasContainer canvas {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.footer {
+  padding: 12px 24px;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+}
+
+.statusPill {
+  padding: 6px 14px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    flex-direction: column;
+  }
+}
